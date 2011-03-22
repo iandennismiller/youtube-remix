@@ -1,3 +1,4 @@
+from fabric.api import env, run, local
 
 def push():
     cmd = "rsync -av public/* idmiller_idm@ssh.phx.nearlyfreespeech.net:assets/last_call"

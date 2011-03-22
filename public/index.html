@@ -1,25 +1,37 @@
 <html>
 <head>
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
+  <title>YouTube iframe API sequence mashup</title>
 </head>
   <body>
-    <div id="player"></div>
+    <div id="page">
+      <h1>YouTube iframe API sequence mashup</h1>
 
+      <p>
+      This page demonstrates how simple it is to embed a sequence of YouTube clips using the new Youtube iframe API, along with <a href="idm_youtube_mash.js">idm_youtube_mash.js</a>.  The current version works best with Chrome.
+      </p>
+
+      <p>
+      Start by placing a div tag in your document.  You can style this div tag however you want, to match the layout or positioning of your theme.  Next, configure your mashup.  Take a look at the source for this HTML file, and you'll see a variable called <b>mash_cfg</b>.  This page's configuration will turn the div ID "example_player" into a youtube chromeless player, set its dimensions to 640x390, use a fading effect to transition between segments, and play a sequence of video segments.  As the last step, it invokes <b>idm_youtube_mash.js</b> which takes care of the rest!
+      </p>
+
+      <div id="example_player"></div>
+
+      <p>
+      The coolest part about the iframe API is that it is compatible with Flash and HTML5, so make sure you test this page twice.  First, <a href="http://www.youtube.com/html5">opt into the YouTube HTML5 trial, here</a>.  Then, leave the HTML5 trial and load this page a second time to test out the Flash version.  The best part about <b>idm_youtube_mash.js</b> is that you don't need to know any javascript at all to use it.  Everything is controlled right here, in this HTML file!  For another example, <a href="news.html">take a look at this.</a>
+      </p>
+
+    </div>
     <script type="text/javascript">
-    var mash_cfg = {
-        'id': 'player',
-        'height': '390',
-        'width': '640',
-        'hide_when_finished': true,
-        'fade': true,
-        'sequence': "(<u1zgFlCw8Aw, 22s, 28s>, <u1zgFlCw8Aw, 127s, 140s>, <L5ebSn9HgJ4, 3019s, 3040s>, <u1zgFlCw8Aw, 195s, 199s>)"
-    };
-
-    //mash_cfg.sequence = "(<L5ebSn9HgJ4, 3019s, 3021s>, <u1zgFlCw8Aw, 195s, 199s>)"
-    //mash_cfg.sequence = "(<yFhFu25TGxM, 2s, 10s>, <tgGxi3hiOnY, 00s, 11s>, <B4Y_2V5caQk, 23s, 33s>, <x5tj9uSc2_4, 8s, 29s>)";
-    //var sequence = "(<u1zgFlCw8Aw, 22s, 28s>, <u1zgFlCw8Aw, 195s, 199s>)";
-    //var sequence = "(<u1zgFlCw8Aw, 22s, 23s>, <u1zgFlCw8Aw, 127s, 128s>, <L5ebSn9HgJ4, 3019s, 3020s>, <u1zgFlCw8Aw, 195s, 199s>)";
+      var mash_cfg = {
+        'id': 'example_player', // the ID of the div tag that will contain video
+        'height': '390', // height of the player
+        'width': '640', // width of the player
+        'hide_when_finished': true, // after the final segment, fade the player away
+        'fade': true, // use the fade transition effect
+        'sequence': "(<u1zgFlCw8Aw, 22s, 28s>, <u1zgFlCw8Aw, 127s, 140s>, <L5ebSn9HgJ4, 3019s, 3040s>, <u1zgFlCw8Aw, 195s, 199s>)" // a list of youtube IDs, and start/stop times
+      };
     </script>
-    <script type="text/javascript" src="client.js"></script>
+    <script type="text/javascript" src="idm_youtube_mash.js"></script>
   </body>
 </html>

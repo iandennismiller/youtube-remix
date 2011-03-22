@@ -10,12 +10,6 @@ path = "/Users/idm/Code/iandennismiller/googleio/public"
 @route('/')
 @route('/index.html')
 def index():
-    #response.headers['Access-Control-Allow-Origin'] = 'http://www.youtube.com'
-    #response.headers['Access-Control-Allow-Origin'] = 'http://stage.youtube.com'
-    response.headers['Access-Control-Allow-Origin'] = '*'
-    response.headers['Access-Control-Allow-Credentials'] = 'true'
-    response.headers['Access-Control-Allow-Methods'] = 'OPTIONS, GET, POST'
-    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Depth, User-Agent, X-File-Size, X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control'
     return static_file("index.html", root=path)
 
 @route('/:filename#.+#')
