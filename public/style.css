@@ -1,0 +1,17 @@
+body {
+    font-size: 1.1em;
+}
+
+#screen {
+    width: 640px;
+    height: 390px;
+    position: absolute;
+    z-index: 99;
+    background: white;
+    margin: 0 auto;
+}
+
+#player {
+    margin: 2em auto;
+    width: 640px;
+}
