@@ -1,5 +1,5 @@
 from fabric.api import env, run, local
+import os
 
-def push():
-    cmd = "rsync -av public/* idmiller_idm@ssh.phx.nearlyfreespeech.net:assets/last_call"
-    local(cmd, capture=False)
+def server():
+    os.system("python dev/server.py")

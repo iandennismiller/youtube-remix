@@ -5,7 +5,7 @@ from __future__ import with_statement
 from bottle import route, run, static_file, post, get, request, debug, response
 
 debug(True)
-path = "/Users/idm/Code/iandennismiller/googleio/public"
+path = "examples"
 
 @route('/')
 @route('/index.html')
